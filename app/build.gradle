@@ -1,0 +1,49 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.tyg.noad'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId 'com.tyg.noad'
+        minSdk 26
+        targetSdk 34
+        versionCode 3
+        versionName '1.2'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    packaging {
+        resources {
+            merges.add('META-INF/xposed/*')
+            excludes.add('**')
+        }
+    }
+}
+
+configurations {
+    all {
+        // 模块只有 Java 代码，不需要 AGP 自动带入的 Kotlin 标准库。
+        exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib'
+    }
+}
+
+dependencies {
+    compileOnly 'io.github.libxposed:api:101.0.1'
+}
