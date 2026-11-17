@@ -7,7 +7,7 @@ android {
     compileSdk 36
 
     defaultConfig {
-        applicationId 'com.tyg.noad'
+        applicationId 'io.github.ying727.tygnoad'
         minSdk 26
         targetSdk 34
         versionCode 3
