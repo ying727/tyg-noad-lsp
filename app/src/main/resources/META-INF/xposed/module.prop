@@ -1,3 +1,6 @@
 minApiVersion=101
 targetApiVersion=101
 staticScope=true
+name=桃园谷去广告
+author=ying727
+description=屏蔽桃园谷门禁的开屏、信息流和开门后全屏广告
